@@ -12,12 +12,12 @@ body {
 #envelope-container {
     text-align: center;
     transform: scale(1.3);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 @keyframes pulse {
     0% {
-        transform:scale(1.3);
+        transform: scale(1.3);
     }
     50% {
         transform: scale(1.6);
@@ -27,11 +27,25 @@ body {
     }
 }
 
-#envelope{
+#envelope {
     width: 200px;
-    animation: pulse 1.5s infinite;
+    animation: pulse 1.5s infinite;          /* keep existing pulse */
     cursor: pointer;
+
+    /* Always-visible shadow */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+
+    border-radius: 10px;                     /* optional: soft corners */
+    transition: box-shadow 0.3s ease;        /* smooth glow on hover */
 }
+
+/* Glow on hover */
+#envelope:hover {
+    box-shadow: 0 0 25px rgb(194, 164, 234),           /* pink glow */
+                0 0 25px rgb(194, 164, 234),
+                0 0 25px rgb(194, 164, 234);
+}
+
 
 #letter-container{
     display: none;
