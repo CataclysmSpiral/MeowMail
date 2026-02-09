@@ -140,16 +140,24 @@ p {
     cursor: pointer;
     user-select: none;
 
-    border: 3px solid rgb(194, 164, 234);          /* pink border */
-    border-radius: 12px;                 /* rounded corners */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);  /* always “floating” */
-    background-color: #ffffff;           /* light pink background */
-    transition: transform 0.2s ease;     /* optional small press effect */
+    border: 3px solid rgb(194, 164, 234);          /* existing border */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);    /* floating shadow */
+    background-color: #ffffff;                      /* existing background */
+    transition: transform 0.2s ease, box-shadow 0.3s ease; /* added box-shadow transition */
+}
+
+/* Glow effect on hover */
+.btn:hover {
+    box-shadow: 0 0 8px rgb(194, 164, 234),    /* soft pink glow */
+                0 0 8px rgb(194, 164, 234),
+                0 0 8px rgb(194, 164, 234);
+    transform: translateY(-3px);  /* optional: small lift on hover */
 }
 
 .btn:active {
-    transform: translateY(-2px);         /* slightly lift when pressing */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.35); /* slightly bigger shadow */
+    transform: translateY(-2px);        
+    box-shadow: 0 10px 20px rgba(0,0,0,0.35); 
 }
 
 .yes-btn,
@@ -172,7 +180,6 @@ p {
     transition: transform 0.15s ease;
     cursor: default;
 }
-
 
 
 
